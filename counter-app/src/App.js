@@ -1,7 +1,6 @@
 // main logic of application is in this file. we will link external components to this.
 
 import React, { useState } from "react";
-import { Increment } from "./components/Increment";
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -18,9 +17,9 @@ const App = () => {
       </div>
 
       <div className="buttons">
-        <button onClick={Increment}>Increment ++</button>
-        <button>Decrement --</button>
-        <button>Reset</button>
+        <button onClick={() => setCount(count + 1)}>Increment ++</button>
+        <button onClick={() => setCount(count - 1)}>Decrement --</button>
+        <button onClick={() => setCount(0)}>Reset</button>
       </div>
 
     </div>
