@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0)
-  
+
   return (<>
     <div className="container">
 
@@ -13,13 +13,15 @@ const App = () => {
       </div>
 
       <div className="inputfield">
-       <span>{count}</span>
+        <span>{count}</span>
       </div>
 
       <div className="buttons">
-        <button onClick={() => setCount(count + 1)}>Increment ++</button>
-        <button onClick={() => setCount(count - 1)}>Decrement --</button>
-        <button onClick={() => setCount(0)}>Reset</button>
+        <button id="inc" onClick={() => setCount(count + 1)}>Increment ++</button>
+        <button id="dec" onClick={() => setCount(count - 1)}
+          disabled={count === 0}>Decrement --</button>
+        <button id="reset" onClick={() => setCount(0)}
+          disabled={count === 0}>Reset</button>
       </div>
 
     </div>
