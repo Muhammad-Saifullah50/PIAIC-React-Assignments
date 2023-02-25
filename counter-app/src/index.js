@@ -7,5 +7,6 @@ import "./index.css";
 const el = document.getElementById("root");
 
 ReactDOM.render(<App />, el);
+ReactDOM.render(<Increment />, el);
 
 
