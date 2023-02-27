@@ -1,38 +1,63 @@
-.App {
+h1 {
+  color: rgb(39 13 193 / 85%);
+}
+
+.container {
+  border: 7px solid black;
+  height: 500px;
+  width: 500px;
+  margin: 50px auto;
+  font-family: 'Baloo Bhai 2', cursive;
+  border-radius: 25px;
+
+
+}
+
+.heading {
+  display: inline;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Baloo Bhai 2', cursive;
+}
+
+.inputfield {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inputfield span {
+  height: 50px;
+  text-align: center;
+  width: 300px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  border-radius: 10px;
+  font-family: 'Baloo Bhai 2', cursive;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.buttons button {
+  display: block;
+  width: 400px;
+  padding: 10px;
+  margin: 15px;
+  margin-left: 50px;
+  height: 50px;
+  font-size: 22px;
+  font-family: 'Baloo Bhai 2', cursive;
+  border-radius: 10px;
+  font-family: 'Baloo Bhai 2', cursive;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#inc {
+  background-color: #38c363;
+
 }
 
-.App-link {
-  color: #61dafb;
+#dec {
+  background-color: rgb(211 24 24 / 92%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#reset {
+  background-color: #c3b8b0;
 }
