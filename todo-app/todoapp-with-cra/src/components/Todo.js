@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './Todo.css'
+import { FaTrash } from "react-icons/fa";
+
 
 
 const Todo = () => {
@@ -15,6 +17,15 @@ const Todo = () => {
             setItems([...Items, InputData]);
             setInputData('');
         }
+    }
+
+    const deleteitem = (id) => {
+        console.log(id)
+        const updateditems = Items.filter((elem, ind) => {
+            return ind !== id;
+
+        })
+        setItems(updateditems);
     }
     return (
         <>
@@ -35,9 +46,9 @@ const Todo = () => {
                 {
                     Items.map((elem, ind) => {
                         return (<>
-                            <div className="showItems" key={ind}>
-                                <div className="list">{elem}
-                                </div>
+                            <div className="showItems" key={ind} >
+                                <div className="list">{elem}</div>
+                                <div className="trashicon" onClick={() => deleteitem(ind)} ><FaTrash /></div>
                             </div>
                         </>)
                     })

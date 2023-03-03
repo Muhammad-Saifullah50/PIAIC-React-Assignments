@@ -4,20 +4,22 @@
     margin: 56px auto;
 }
 
-.header h1{
+.header h1 {
     font-size: 40px;
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
     color: #f3dc39;
 
 }
-.form{
+
+.form {
     text-align: center;
     /* border: 1px solid black; */
     display: flex;
     justify-content: space-between;
 }
-.form input{
+
+.form input {
     font-size: 20px;
     padding: 10px;
     font-family: 'Baloo Bhai 2', cursive;
@@ -25,15 +27,22 @@
     border-radius: 5px;
 
 }
-.form button{
+
+.form button {
     font-size: 20px;
     padding: 10px;
     font-family: 'Baloo Bhai 2', cursive;
     border-radius: 5px;
-
-
+    background-color: #f3dc39;
+    border: 2px solid black;
 }
-.showItems{
+
+.form button:hover {
+    background-color: #1e8359;
+    color: #f3dc39;
+}
+
+.showItems {
     border: 2px solid black;
     margin-top: 5px;
     font-size: 20px;
@@ -41,14 +50,30 @@
     border-radius: 5px;
     padding-left: 5px;
     background-color: #f3dc39;
-    
+    display: flex;
+    justify-content: space-between;
+
 
 }
-body{
+
+body {
     background-color: #1e8359;
 }
-.showItems:hover{
+
+.showItems:hover {
     background-color: #1e8359;
-    color: black;
-    border: 2px solid #f3dc39;
+    color:#f3dc39;
+    border: 2px solid black;
+}
+
+.trashicon {
+    color: #d71a1a;
+    margin-top: 5px;
+    margin-right: 5px;
+    ;
+}
+
+.list {
+    margin-top: 3px;
+
 }
