@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-const Overview = () => {
+const Overview = (props) => {
     const [isAddTxnVisible, toggleAddTxn] = useState(false)
 
     return (
         <>
-            <div className="balance-button">
+            <div className="overview-cont">
                 <div className="balance">
                     Rs 10000
                 </div>
@@ -16,10 +16,20 @@ const Overview = () => {
                         {/* toggleAddTxn is a function which toggles the text of the button when it is clicked  */}
                     </button>
                     <div className="cont">
-                        {isAddTxnVisible && <AddTransactionView toggleAddTxn={toggleAddTxn}/>}
+                        {isAddTxnVisible && <AddTransactionView toggleAddTxn={toggleAddTxn} addTransaction={props.addTransaction} />}
 
                     </div>
                 </div>
+                <div className="expense-info">
+                    <div className="expense-tracker">
+                        Expense <span>Rs 1000</span>
+                    </div>
+                    <div className="income-info">
+                        Income <span>Rs 5000</span>
+
+                    </div>
+                </div>
+
             </div>
         </>
     )
@@ -34,8 +44,9 @@ const AddTransactionView = (props) => {
     const [type, setType] = useState("EXPENSE");
 
     const addTransaction = () => {
-        console.log({amount, desc, type})
+        props.addTransaction({ amount: Number(amount), desc, type, id: Date.now() })
         props.toggleAddTxn();
+
     };
     return (
         <>
@@ -49,20 +60,20 @@ const AddTransactionView = (props) => {
                         name="type"
                         id="Expense"
                         value="EXPENSE"
-                        checked={type === "EXPENSE"} 
+                        checked={type === "EXPENSE"}
                         onChange={(e) => setType(e.target.value)}
-                        />
+                    />
 
                     <label htmlFor="Expense">Expense</label>
 
-                    <input type="radio" 
-                    name="type" 
-                    id="Income" 
-                    value="INCOME" 
-                    checked={type === "INCOME"} 
-                    onChange={(e) => setType(e.target.value)}
+                    <input type="radio"
+                        name="type"
+                        id="Income"
+                        value="INCOME"
+                        checked={type === "INCOME"}
+                        onChange={(e) => setType(e.target.value)}
                     />
-                    
+
                     <label htmlFor="Income">Income</label>
                 </div>
                 <AddTransactionButton onClick={addTransaction} />
