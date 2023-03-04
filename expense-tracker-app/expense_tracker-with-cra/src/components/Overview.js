@@ -6,7 +6,7 @@ const Overview = (props) => {
         <>
             <div className="overview-cont">
                 <div className="balance">
-                   Balance: Rs 10000
+                   Balance: Rs {props.income - props.expense}
                 </div>
                 <div className="addbtn">
                     <button onClick={() => toggleAddTxn(!isAddTxnVisible)}>
@@ -21,11 +21,11 @@ const Overview = (props) => {
                     </div>
                 </div>
                 <div className="expense-info">
-                    <div className="expense-tracker" isExpense={false}>
-                        Expense <br /><span>Rs 1000</span>
+                    <div className="expense-tracker" isIncome={false}>
+                        Expense <br /><span>{props.expense}</span>
                     </div>
                     <div className="income-info" isIncome={true}>
-                        Income <br /><span>Rs 5000</span>
+                        Income <br /><span>{props.income}</span>
 
                     </div>
                 </div>
