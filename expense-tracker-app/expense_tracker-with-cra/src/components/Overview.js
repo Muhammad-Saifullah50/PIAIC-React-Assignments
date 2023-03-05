@@ -6,8 +6,7 @@ const Overview = (props) => {
         <>
             <div className="overview-cont">
                 <div className="balance">
-                   Balance: Rs {props.income - props.expense}
-                </div>
+                Balance: Rs {props.income - props.expense}                </div>
                 <div className="addbtn">
                     <button onClick={() => toggleAddTxn(!isAddTxnVisible)}>
                         {isAddTxnVisible ? "Cancel" : "Add"}
@@ -21,12 +20,11 @@ const Overview = (props) => {
                     </div>
                 </div>
                 <div className="expense-info">
-                    <div className="expense-tracker" isIncome={false}>
+                    <div className="expense-tracker">
                         Expense <br /><span>{props.expense}</span>
                     </div>
-                    <div className="income-info" isIncome={true}>
+                    <div className="income-info">
                         Income <br /><span>{props.income}</span>
-
                     </div>
                 </div>
 
@@ -39,8 +37,8 @@ export default Overview
 
 const AddTransactionView = (props) => {
 
-    const [amount, setAmount] = useState();
-    const [desc, setDesc] = useState();
+    const [amount, setAmount] = useState("");
+    const [desc, setDesc] = useState("");
     const [type, setType] = useState("EXPENSE");
 
     const addTransaction = () => {
